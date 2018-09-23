@@ -1,0 +1,16 @@
+{
+  "name": "foopad",
+  "version": "0.1.0",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "cssnano": "^4.1.0",
+    "parcel-bundler": "^1.9.7"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "test"
+  },
+  "author": "programmerper",
+  "license": "ISC"
+}

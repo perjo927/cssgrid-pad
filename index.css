@@ -1,0 +1,283 @@
+.left {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: left;
+}
+
+.foovalue {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: foovalue;
+}
+
+.foobar {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+    grid-area: foobar;
+}
+
+.schmetterling {
+    -ms-grid-row: 1;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 5;
+    grid-area: schmetterling;
+}
+
+.leet {
+    -ms-grid-row: 1;
+    -ms-grid-column: 15;
+    grid-area: leet;
+}
+
+.omg {
+    -ms-grid-row: 1;
+    -ms-grid-column: 17;
+    grid-area: omg;
+}
+
+.right {
+    -ms-grid-row: 1;
+    -ms-grid-column: 19;
+    grid-area: right;
+}
+
+.gamename {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+    grid-area: gamename;
+    justify-self: start;
+}
+
+.clock {
+    -ms-grid-row: 3;
+    -ms-grid-column: 19;
+    -ms-grid-column-align: end;
+    grid-area: clock;
+    justify-self: end;
+}
+
+.container {
+    background: rgba(2, 2, 2, 0.2);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    box-shadow: inset 0px -1.1em 0 0 rgba(0,0,0,1);
+    display: -ms-grid;
+    -ms-grid-columns: 0.5fr 0 1fr 0 2fr 0 2fr 0 1fr 0 1fr 0 1fr 0 2fr 0 2fr 0 1fr 0 0.5fr;
+    -ms-grid-rows: 4em 0.5em 1em;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2fr 2fr 1fr 1fr 1fr 2fr 2fr 1fr 0.5fr;
+    grid-template-rows: 4em 1em;
+    grid-column-gap: 0;
+    grid-row-gap: 0.5em;
+    grid-template-areas: 
+    ".  left        foovalue   foobar     schmetterling   schmetterling   schmetterling   leet     omg right ." 
+    ".  gamename    gamename    .       .           .           .           .       .       clock .";
+}
+
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    background: rgba(68, 137, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: arial, sans-serif;
+    font-size: 2vmin;
+}
+
+@media (max-aspect-ratio: 4/3) {
+    body {
+        font-size: 1.5vw;
+    }
+}
+
+.wrapper {
+    color: #f1f1f1;        
+    display: -ms-grid;
+    -ms-grid-column-align: center; 
+    -ms-grid-row-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.display-wrapper {
+    text-align: center;
+}
+
+.svg {
+    width: 100%;
+    height: 100%;
+    width: 2.2em;
+    height: 2.2em;
+    overflow: hidden;
+    fill: currentColor;
+}
+
+.cornerbutton {
+    width: 100%;
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.leftbutton {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+.rightbutton {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+.label {
+    text-align: center;
+    font-size: 0.6em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.value {
+    border-radius: 1em;
+    background: rgba(230, 230, 230, 0.36);
+    font-size: 1.4em;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+    padding: 0.05em 0.8em;
+}
+
+.cv-wrapper {
+    -ms-grid-columns: 1fr 0 2fr 0 1fr;
+    -ms-grid-rows: 0.5em 3px 2em;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 2em 0.5em;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-areas: 
+    ".          cv-label           ." 
+    "arrow-left value arrow-right"
+    ".          meter           ."
+    ;
+}
+
+.cv-label {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: cv-label;
+}
+
+.arrow-left {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-align: end;
+    grid-area: arrow-left;
+    justify-self: end;
+}
+.arrow-right {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+    -ms-grid-column-align: start;    
+    grid-area: arrow-right;    
+    justify-self: start;
+}
+
+.cv-value {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: value;
+}
+
+.meter {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    grid-area: meter;
+    width: 3em;
+    height: 0.2em;
+}
+
+.meterouter {
+    background: rgba(230, 230, 230, 0.76);
+    font-size: 0.8em;
+}
+
+.meterinner {
+    background: #FFFFFF;
+    height: 0.1em;
+    width: 29%;
+}
+
+.foobardisplay {
+    text-align: center;
+    display: inline-block;
+    color: #FFFFFF;
+}
+
+.schmetterling {
+    position: relative;
+    bottom: 1em;
+    height: 135%;
+    border-radius: 3em;
+    background: rgba(230, 230, 230, 0.36);
+    color: #f1f1f1;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.bf-wrapper {    
+    padding: 1.75em 0;
+}
+
+.fooplay {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    -ms-grid-column-align: center;
+}
+
+.press {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+}
+
+.pressbutton {
+    width: 5em;
+    height: 5em;
+    z-index: 6;
+    display: block;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.pressbutton>svg {
+    fill: currentColor;
+}
+
+.quickpress {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    -ms-grid-column-align: center;
+}
+
+.meta-data {
+    background: black;
+    color:white;
+    font-size: 0.6em;
+    font-weight: 600;
+}
